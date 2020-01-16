@@ -261,7 +261,7 @@ controller:
       http: http
       https: https
 
-    type: LoadBalancer
+    type: NodePort
 
     # type: NodePort
     # nodePorts:
@@ -270,8 +270,8 @@ controller:
     #   tcp:
     #     8080: 32808
     nodePorts:
-      http: ""
-      https: ""
+      http: "32080"
+      https: "32443"
       tcp: {}
       udp: {}
 
@@ -346,7 +346,7 @@ controller:
   metrics:
     port: 10254
     # if this port is changed, change healthz-port: in extraArgs: accordingly
-    enabled: false
+    enabled: true
 
     service:
       annotations: {}
